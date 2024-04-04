@@ -1,9 +1,9 @@
 // high-level pseudo code 
 
-// Initiate game and grid via start button and load food and sandworm onto grid, random placement
+// Initiate game and grid via start button and load water and sandworm onto grid, random placement
 // move sandworm via eventlistener 'w' 'a' 's' 'd' or arrows
-// If sandworm cell = food cell, add another cell to snake
-// When food is "eaten" and snake cell added, increase speed
+// If sandworm cell = water cell, add another cell to sandworm
+// When water is "eaten" and sandworm cell added, increase speed
 // if sandworm cell = sandworm cell, initiate game over
 // if game over, reveal game over screen
 // When restart button clicked, reset game
@@ -20,6 +20,12 @@ const cols = 20
 const rows = 20
 const cellCount = cols * rows
 const startingPos = 0
+let intervalSpeed = 1000
+let sandwormPosition
+let currentWater
+let currentSandworm
+let currentDirection
+let sandwormBody = [] // Array to store sandworm body in
 
 const cells = []
 
@@ -64,19 +70,16 @@ let currentPos = 0
 // - score
 let score = 0
 // - current position of sandworm - Made random cell
-let sandwormPosition = 0
 // - intervalspeed
-let intervalSpeed = 1000
 
-let waterPosition
+
+let currentSandworm
 
 
 // On Page Load
+resetVariables()
 
-// Grid elements
 
-
-// Create grid
 
 
 
@@ -88,8 +91,17 @@ let waterPosition
 // - Random position for water cell
 
 function generateWaterPosition() {
-  return Math.floor(Math.random() * cellCount)
+  currentWater = Math.floor(Math.random() * cellCount)
+  const newCell = cells[currentWater]
+  newCell.classList.add['water']
+}
 
+// - Random position for starting sandworm cell
+
+function generateSandwormPosition() {
+  currentSandworm = Math.floor(Math.random() * cellCount !== currentWater)
+  const newCell = cells[currentSandworm]
+  newCell.classList.add['snake']
 }
 
 
