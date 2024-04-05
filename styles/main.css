@@ -17,25 +17,30 @@ body {
   align-items: center;
 }
 
-#grid {
+.container {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   height: 600px;
   width: 600px;
   background-image: url('../assets/grid-sand.png');
 }
 
-#grid div {
+.grid {
+  display: grid;
+  border: 1px black;
+}
+
+.container div {
   border: 1px solid black;
   display: inline-block;
 }
 
-#grid .water {
+.water {
   background-image: url('../assets/water.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#grid .sandworm {
+.sandworm {
   background-color: rgb(120, 62, 62);
   border: 1px;
 }

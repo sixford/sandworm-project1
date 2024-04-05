@@ -8,33 +8,16 @@
 // if game over, reveal game over screen
 // When restart button clicked, reset game
 
-
-// Elements
-
-const grid = document.querySelector('#grid')
-const startButton = document.querySelector('#start')
-const restartButton = document.querySelector('#restart')
-const scoreDisplay = document.querySelector('p.score')
-
-const cols = 20
-const rows = 20
-const cellCount = cols * rows
-const startingPos = 0
-let intervalSpeed = 1000
-let sandwormPosition
-let currentWater
-let currentSandworm
-let currentDirection
-let sandwormBody = [] // Array to store sandworm body in
-
 const cells = []
 
-// add water + snake in starting cell
+function init() {
 
-function startGame() {
+  const container = document.querySelector('.container')
+  const cols = 20
+  const rows = 20
+  const cellCount = cols * rows
 
   for (let idx = 0; idx < cellCount; idx++) {
-
     // Generate element
     const cell = document.createElement('div')
     cell.innerText = idx
@@ -42,9 +25,9 @@ function startGame() {
     cell.classList.add('grid-cell')
 
     // Place the character in the starting cell
-    if (idx === startingPos) {
-      cell.classList.add('water')
-    }
+    // if (idx === startingPos) {
+    //   cell.classList.add('water')
+    // }
 
     // Set height and width of cell
     cell.style.width = `${100 / cols}%`
@@ -55,29 +38,90 @@ function startGame() {
 
     // Add the cell to the cells array
     cells.push(cell)
+    console.log(cells)
   }
 }
 
-startGame()
 
-let currentPos = 0
+// Elements
+
+// const startButton = document.querySelector('#start')
+// const restartButton = document.querySelector('#restart')
 
 
+// Variables 
+
+let sandwormBody = [305, 306]
+let water = [Math.floor(Math.random() * cells.length)]
+let score = 0
+let speed = 3
+let gameOver = false
+// let intervalSpeed = 1000
+const scoreDisplay = document.querySelector('span')
+
+
+
+// add water + sandworm in cell in grid
+function addSandworm() {
+  sandwormBody.forEach((idNumber) => {
+    const cell = document.querySelector('#cell-' + idNumber)
+    cell.classList.add('sandworm')
+  })
+}
+
+addSandworm()
+
+function addWater() {
+  water.forEach((idNumber) => {
+    const cell = document.querySelector('#cell-' + idNumber)
+    cell.classList.add('water')
+  })
+}
+
+addWater()
+
+// function generateWater() {
+//   currentWater = Math.floor(Math.random() * cellCount)
+//   cells[currentWater].classList.add('water')
+// }
+
+// function generateSandworm() {
+//   currentSandworm = startingPos
+//   cells[currentSandworm].classList.add('sandworm')
+// }
+
+// function generateGrid() {
+
+
+// function startGame() {
+
+//   if (!gameStarted) {
+//     gameStarted = true
+//     startButton.style.display = 'none'
+//     restartButton.style.display = 'inline-block'
+//     intervalSpeed = 700
+//     currentDirection = 'right'
+//     moveSandworm()
+//   }
+// }
+// console.log(startGame)
 
 
 // Variable 
 
 // - score
-let score = 0
+
 // - current position of sandworm - Made random cell
 // - intervalspeed
 
 
-let currentSandworm
+
 
 
 // On Page Load
-resetVariables()
+// window.onload = () => {
+//   generateGrid()
+// }
 
 
 
@@ -90,19 +134,19 @@ resetVariables()
 
 // - Random position for water cell
 
-function generateWaterPosition() {
-  currentWater = Math.floor(Math.random() * cellCount)
-  const newCell = cells[currentWater]
-  newCell.classList.add['water']
-}
+// function generateWaterPosition() {
+//   currentWater = Math.floor(Math.random() * cellCount)
+//   const newCell = cells[currentWater]
+//   newCell.classList.add['water']
+// }
 
 // - Random position for starting sandworm cell
 
-function generateSandwormPosition() {
-  currentSandworm = Math.floor(Math.random() * cellCount !== currentWater)
-  const newCell = cells[currentSandworm]
-  newCell.classList.add['snake']
-}
+// function generateSandwormPosition() {
+//   currentSandworm = Math.floor(Math.random() * cellCount !== currentWater)
+//   const newCell = cells[currentSandworm]
+//   newCell.classList.add['sandworm']
+// }
 
 
 // - check for collision with water cell
@@ -119,6 +163,18 @@ function generateSandwormPosition() {
 
 // - reset variables; score to 0 
 
+// function resetGame() {
+//   score = 0
+//   intervalSpeed = 1000
+//   gameStarted = false
+//   grid.innerHTML = ''
+//   cells = []
+//   sandwormBody = [startingPos]
+
+//   generateGrid()
+// }
+
+
 // - Function: if sandworm cell moves right off grid, reset on same row.
 
 // - Bring z-index (game over grid) to front
@@ -128,9 +184,9 @@ function generateSandwormPosition() {
 // Events
 
 // - Initialise game when start clicked
-
+// startButton.addEventListener('click', startGame)
 // - Handle user input; moving sandworm
 
 // - When restart button clicked, reset grid
-
+// restartButton.addEventListener('click', resetGame)
 
