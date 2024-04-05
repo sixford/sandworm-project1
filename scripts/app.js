@@ -21,7 +21,7 @@ function init() {
     const cell = document.createElement('div')
     cell.id = `cell-${idx}`
     cell.dataset.index = idx
-    cell.classList.add('grid')
+    cell.classList.add('cell')
 
     // Place the character in the starting cell
     // if (idx === startingPos) {
@@ -29,8 +29,8 @@ function init() {
     // }
 
     // Set height and width of cell
-    cell.style.width = `${100 / width}%`
-    cell.style.height = `${100 / width}%`
+    // cell.style.width = `${100 / width}%`
+    // cell.style.height = `${100 / width}%`
 
     // Add cell to the UI
     container.append(cell)
@@ -62,7 +62,6 @@ function init() {
   sandwormBody.forEach((idNumber) => {
     const cell = document.querySelector('#cell-' + idNumber)
     cell.classList.add('sandworm')
-    cell.innerText = 'Sandworm'
     cell.style.backgroundColor = ('blue')
     console.log(`Added sandworm to cell ${idNumber}`)
     console.log(cell)
@@ -73,7 +72,6 @@ function init() {
   water.forEach((idNumber) => {
     const cell = document.querySelector('#cell-' + idNumber)
     cell.classList.add('water')
-    cell.innerText = 'Water'
     console.log(`Added water to cell ${idNumber}`)
   })
 

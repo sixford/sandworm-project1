@@ -21,7 +21,7 @@ body {
   grid-template-columns: 20;
   grid-template-rows: repeat(20, 30px);
   grid-template-columns: repeat(20, 30px);
-  background-image: url('../assets/grid-sand.png');
+  /* background-image: url('../assets/grid-sand.png'); */
 }
 
 .grid {
@@ -39,6 +39,11 @@ body {
   background-image: url('../assets/water.png');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
 }
 
 
