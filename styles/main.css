@@ -3,45 +3,46 @@
 }
 
 body {
+  display: flex;
   margin: 0;
   background-image: url('../assets/dune-background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-.grid-wrapper {
-  min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .container {
+  display: grid;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  height: 600px;
-  width: 600px;
+  grid-template-rows: 20;
+  grid-template-columns: 20;
+  grid-template-rows: repeat(20, 30px);
+  grid-template-columns: repeat(20, 30px);
   background-image: url('../assets/grid-sand.png');
 }
 
 .grid {
   display: grid;
-  border: 1px black;
+  border: 1px dotted green;
 }
 
-.container div {
-  border: 1px solid black;
-  display: inline-block;
+.sandworm {
+  border: solid 100px;
+  background-size: contain;
+  background-color: blue !important;
 }
 
 .water {
   background-image: url('../assets/water.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
-.sandworm {
-  background-color: rgb(120, 62, 62);
-  border: 1px;
-}
 
+.container div {
+  border: 1px solid black;
+  display: inline-block;
+}
