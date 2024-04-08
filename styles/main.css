@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+header {
+  display: flex;
+  align-items: center;
+}
+
+/* button.start {
+
+
+} */
+
+
 body {
   display: flex;
   margin: 0;
@@ -32,13 +43,32 @@ body {
 .sandworm {
   border: solid 100px;
   background-size: contain;
-  background-color: blue !important;
+  background-color: brown;
 }
 
 .water {
   background-image: url('../assets/water.png');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+#gameOver {
+  position: absolute;
+  visibility: hidden; 
+  padding-left: 100px;
+  padding-right: 100px;
+  /* background-image: url('../assets/Dunebkg.gif'); */
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+#restart {
+  padding: 10px 30px;
+  background-color: brown;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 20px;
+  text-decoration: solid;
 }
 
 .cell {
