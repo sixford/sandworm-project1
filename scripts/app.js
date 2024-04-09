@@ -10,8 +10,8 @@
 
 // Elements
 
-// const startButton = document.querySelector('#start')
-// const restartButton = document.querySelector('#restart')
+const startButton = document.querySelector('#start')
+const restartButton = document.querySelector('#restart')
 
 function init() {
 
@@ -25,6 +25,15 @@ function init() {
     cell.classList.add('grid')
     container.append(cell)
     cells.push(cell)
+  }
+
+  let gameStarted = false
+  
+  function startGame() {
+    if (!gameStarted) {
+      gameStarted = true
+      window.requestAnimationFrame(main)
+    }
   }
 
 
@@ -156,7 +165,9 @@ function init() {
     if (eatingSelf) {
       gameOver = true
       document.querySelector('#gameOver').style.visibility = 'visible'
-      document.querySelector('#restart').addEventListener('click', () => { reset() })
+      document.querySelector('#restart').addEventListener('click', () => {
+        reset() 
+      })
     }
     sandwormBody.push(newSandwormHead)
     document.querySelector(`#cell-${newSandwormHead}`).classList.add('sandworm')
@@ -178,8 +189,6 @@ function init() {
 
   // Variable 
 
-  // - score
-
   // - current position of sandworm - Made random cell
   // - intervalspeed
 
@@ -196,6 +205,7 @@ function init() {
     }
   }
 
+
   function main(currentTime) {
     window.requestAnimationFrame(main)
     const secsSinceLastLoading = (currentTime - lastLoadTime) / 1000
@@ -206,7 +216,7 @@ function init() {
       sandwormMovement(currentDirection)
     }
   }
-  window.requestAnimationFrame(main)
+  // window.requestAnimationFrame(main)
 
 
   // Execution/Functions
@@ -247,7 +257,8 @@ function init() {
 
   // - Bring z-index (game over grid) to front
 
-
+  startButton.addEventListener('click', startGame)
+  restartButton.addEventListener('click', reset)
 
   // Events
   document.addEventListener('keydown', updateDirection)
