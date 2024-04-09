@@ -10,7 +10,7 @@
 
 // Elements
 
-const startButton = document.querySelector('#start')
+// const startButton = document.querySelector('#start')
 const restartButton = document.querySelector('#restart')
 
 function init() {
@@ -28,6 +28,9 @@ function init() {
   }
 
   let gameStarted = false
+
+  const startButton = document.querySelector('#start')
+  startButton.addEventListener('click', startGame)
   
   function startGame() {
     if (!gameStarted) {
@@ -67,6 +70,7 @@ function init() {
   const left = 37
 
   function reset() {
+    gameStarted = false
     sandwormBody = [305, 306, 307]
     water = [Math.floor(Math.random() * 399)]
     lastLoadTime = 0
@@ -253,7 +257,6 @@ function init() {
 
   // - Bring z-index (game over grid) to front
 
-  startButton.addEventListener('click', startGame)
   restartButton.addEventListener('click', reset)
 
   // Events
