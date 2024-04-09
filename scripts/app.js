@@ -165,9 +165,7 @@ function init() {
     if (eatingSelf) {
       gameOver = true
       document.querySelector('#gameOver').style.visibility = 'visible'
-      document.querySelector('#restart').addEventListener('click', () => {
-        reset() 
-      })
+      document.querySelector('#restart').addEventListener('click', () => { reset() })
     }
     sandwormBody.push(newSandwormHead)
     document.querySelector(`#cell-${newSandwormHead}`).classList.add('sandworm')
