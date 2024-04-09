@@ -48,7 +48,7 @@ function init() {
   let score = 0
   let speed = 2
   let gameOver = false
-  const scoreDisplay = document.querySelector('span')
+  let scoreDisplay = document.querySelector('span')
 
   // add water + sandworm in cell in grid
   sandwormBody.forEach((idNumber) => {
@@ -73,6 +73,7 @@ function init() {
     score = 0
     speed = 2
     gameOver = false
+    scoreDisplay = document.querySelector('span')
     let gridsInnerHTML = ''
     for (let i = 0; i < 400; i++) {
       // gridsInnerHTML += "<div id=" + "cell" + "-" + i + " class='grid'></div>"
