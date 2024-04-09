@@ -73,9 +73,10 @@ function init() {
     score = 0
     speed = 2
     gameOver = false
-    let gridsInnerHTML = ""
+    let gridsInnerHTML = ''
     for (let i = 0; i < 400; i++) {
-      gridsInnerHTML += "<div id=" + "cell" + "-" + i + " class='grid'></div>"
+      // gridsInnerHTML += "<div id=" + "cell" + "-" + i + " class='grid'></div>"
+      gridsInnerHTML += "<div id='cell-" + i + "' class ='grid'></div>"
     }
     document.querySelector('.container').innerHTML = gridsInnerHTML
     sandwormBody.forEach((idNumber) => {
@@ -101,7 +102,6 @@ function init() {
   //     gameStarted = true
   //     startButton.style.display = 'none'
   //     restartButton.style.display = 'inline-block'
-  //     intervalSpeed = 700
   //     currentDirection = 'right'
   //     moveSandworm()
   //   }

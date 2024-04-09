@@ -6,17 +6,22 @@
 #header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 h1 { 
   text-align: center;
+  text-shadow: navajowhite;
 
 }
 
 #start {
   justify-content: center;
+  cursor: pointer;
 }
 
 /* button.start {
@@ -40,11 +45,8 @@ body {
 .container {
   display: grid;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  /* grid-template-rows: 20;
-  grid-template-columns: 20; */
   grid-template-rows: repeat(20, 30px);
   grid-template-columns: repeat(20, 30px);
-  /* background-image: url('../assets/grid-sand.png'); */
 }
 
 .grid {
@@ -84,7 +86,6 @@ body {
 
 h2 {
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
 }
 
 #restart {
