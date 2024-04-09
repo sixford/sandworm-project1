@@ -76,7 +76,6 @@ function init() {
     scoreDisplay = document.querySelector('span')
     let gridsInnerHTML = ''
     for (let i = 0; i < 400; i++) {
-      // gridsInnerHTML += "<div id=" + "cell" + "-" + i + " class='grid'></div>"
       gridsInnerHTML += "<div id='cell-" + i + "' class ='grid'></div>"
     }
     document.querySelector('.container').innerHTML = gridsInnerHTML
@@ -110,7 +109,6 @@ function init() {
   // console.log(startGame)
 
   function sandwormMovement(direction) {
-    console.log(direction)
 
     const sandwormHead = sandwormBody[sandwormBody.length - 1]
     const sandwormTail = sandwormBody[0]
@@ -191,12 +189,12 @@ function init() {
   // - current position of sandworm - Made random cell
   // - intervalspeed
 
-  let currentDirection = up
+  let currentDirection = right
   function updateDirection(evt) {
-    if (evt.keyCode === up) {
-      currentDirection = up
-    } else if (evt.keyCode === right) {
+    if (evt.keyCode === right) {
       currentDirection = right
+    } else if (evt.keyCode === up) {
+      currentDirection = up
     } else if (evt.keyCode === down) {
       currentDirection = down
     } else if (evt.keyCode === left) {
@@ -209,7 +207,6 @@ function init() {
     window.requestAnimationFrame(main)
     const secsSinceLastLoading = (currentTime - lastLoadTime) / 1000
     if (secsSinceLastLoading < 1 / speed) return
-    console.log('loading')
     lastLoadTime = currentTime
     if (!gameOver) {
       sandwormMovement(currentDirection)
