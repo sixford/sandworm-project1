@@ -50,7 +50,8 @@ Adding grid wrapping using modulo.
 Styling the game with a Dune-inspired theme.
 
 
-![Uploading Screenshot 2024-09-09 at 21.25.00.png…]()
+<img width="957" alt="Screenshot 2024-09-09 at 21 25 00" src="https://github.com/user-attachments/assets/a3a261ac-4ada-4144-8704-b52948ef9cff">
+
 
 Challenges
 Grid Wrapping Logic: Implementing the wrapping logic using modulo was initially challenging due to edge cases when the sandworm crossed the boundaries.
