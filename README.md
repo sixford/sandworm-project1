@@ -49,6 +49,9 @@ Implementing the core game loop and sandworm movement.
 Adding grid wrapping using modulo.
 Styling the game with a Dune-inspired theme.
 
+
+![Uploading Screenshot 2024-09-09 at 21.25.00.png…]()
+
 Challenges
 Grid Wrapping Logic: Implementing the wrapping logic using modulo was initially challenging due to edge cases when the sandworm crossed the boundaries.
 Collision Detection: Ensuring that the sandworm accurately detects collisions with itself as it grows required careful management of its position data.
